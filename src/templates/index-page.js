@@ -4,16 +4,14 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-export const IndexPageTemplate = ({
-  title,
-}) => (
+export const IndexPageTemplate = ({ title }) => (
   <div>
-      <h1>{title}</h1>
+    <h1>{title}</h1>
   </div>
 )
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 }
 
 const IndexPage = ({ data }) => {
@@ -21,9 +19,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate
-        title={frontmatter.title}
-      />
+      <IndexPageTemplate title={frontmatter.title} />
     </Layout>
   )
 }
@@ -31,9 +27,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
+      frontmatter: PropTypes.oneOfType([PropTypes.object]),
     }),
-  }),
+  }).isRequired,
 }
 
 export default IndexPage
