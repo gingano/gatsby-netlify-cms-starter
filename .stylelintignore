@@ -4,6 +4,7 @@
 /.vscode
 /node_modules
 /*.json
+/*.toml
 /src/components
 /src/fonts
 /src/images
