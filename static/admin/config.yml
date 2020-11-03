@@ -23,4 +23,4 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: "Title is visible", name: "titleIsVisible", widget: "boolean", default: true}
           - { label: 'Background color', name: 'backgroundColor', widget: 'color', enableAlpha: true, allowInput: true }
-          - {label: 'Date', name: 'date', widget: 'date', default: '', format: 'Do MMM YY'}
+          - {label: 'Date', name: 'date', widget: 'date', default: '', format: 'DD MM YYYY'}
