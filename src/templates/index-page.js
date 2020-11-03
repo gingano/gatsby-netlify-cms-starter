@@ -5,8 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 export const IndexPageTemplate = ({
-  title,
-  titleIsVisible,
+  titleContainer,
   backgroundColor,
   date,
 }) => (
@@ -15,14 +14,16 @@ export const IndexPageTemplate = ({
       background: `${backgroundColor}`,
     }}
   >
-    <h1 hidden={!titleIsVisible}>{title}</h1>
+    <h1 hidden={!titleContainer.titleIsVisible}>{titleContainer.title}</h1>
     <p>{date}</p>
   </div>
 )
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  titleIsVisible: PropTypes.bool.isRequired,
+  titleContainer: PropTypes.PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    titleIsVisible: PropTypes.bool.isRequired,
+  }).isRequired,
   backgroundColor: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 }
@@ -33,8 +34,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        title={frontmatter.titleContainer.title}
-        titleIsVisible={frontmatter.titleContainer.titleIsVisible}
+        titleContainer={frontmatter.titleContainer}
         backgroundColor={frontmatter.backgroundColor}
         date={frontmatter.date}
       />

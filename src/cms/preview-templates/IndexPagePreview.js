@@ -9,8 +9,6 @@ const IndexPagePreview = ({ entry }) => {
     return (
       <IndexPageTemplate
         titleContainer={data.titleContainer || {}}
-        title={data.title}
-        titleIsVisible={data.titleIsVisible}
         backgroundColor={data.backgroundColor}
         date={data.date}
       />
