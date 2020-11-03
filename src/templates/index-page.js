@@ -33,8 +33,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        title={frontmatter.title}
-        titleIsVisible={frontmatter.titleIsVisible}
+        title={frontmatter.titleContainer.title}
+        titleIsVisible={frontmatter.titleContainer.titleIsVisible}
         backgroundColor={frontmatter.backgroundColor}
         date={frontmatter.date}
       />
@@ -56,8 +56,10 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        titleIsVisible
+        titleContainer {
+          title
+          titleIsVisible
+        }
         backgroundColor
         date
       }

@@ -8,6 +8,7 @@ const IndexPagePreview = ({ entry }) => {
   if (data) {
     return (
       <IndexPageTemplate
+        titleContainer={data.titleContainer || {}}
         title={data.title}
         titleIsVisible={data.titleIsVisible}
         backgroundColor={data.backgroundColor}

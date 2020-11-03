@@ -20,7 +20,7 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: "Title container", name: "title container", widget: "object", fields: [{label: "Title is visible", name: "titleIsVisible", widget: "boolean", default: true}, {label: Title, name: title, widget: string}]}
+          - {label: "Title container", name: "titleContainer", widget: "object", fields: [{label: "Title is visible", name: "titleIsVisible", widget: "boolean", default: true}, {label: Title, name: title, widget: string}]}
           - {label: 'Background color', name: 'backgroundColor', widget: 'color', enableAlpha: true, allowInput: true}
           - {label: 'Date', name: 'date', widget: 'date', default: '', format: 'DD MM YYYY'}
           - {label: "Image", name: "image", widget: "image"}
