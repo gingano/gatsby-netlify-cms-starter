@@ -6,7 +6,14 @@ const IndexPagePreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
-    return <IndexPageTemplate title={data.title} />
+    return (
+      <IndexPageTemplate
+        title={data.title}
+        titleIsVisible={data.titleIsVisible}
+        backgroundColor={data.backgroundColor}
+        date={data.date}
+      />
+    )
   }
   return <div>Loading...</div>
 }
