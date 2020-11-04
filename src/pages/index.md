@@ -2,7 +2,8 @@
 templateKey: index-page
 titleContainer:
   titleIsVisible: true
-  title: STARTER
-backgroundColor: '#ffffff'
-date: 03 11 2020
+  title: STARTER DEV
+backgroundColor: "#ff0000"
+date: 04 11 2020
+image: /img/products-grid2.jpg
 ---
