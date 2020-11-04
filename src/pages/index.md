@@ -2,7 +2,7 @@
 templateKey: index-page
 title: STARTER
 titleContainer:
-  title: test
+  title: "test "
   titleIsVisible: true
 backgroundColor: "#ff0000"
 date: 03 11 2020
