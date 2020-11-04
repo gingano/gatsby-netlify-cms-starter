@@ -8,6 +8,7 @@ export const IndexPageTemplate = ({
   titleContainer,
   backgroundColor,
   date,
+  image,
 }) => (
   <div
     style={{
@@ -21,6 +22,7 @@ export const IndexPageTemplate = ({
       {titleContainer.title}
     </h1>
     <p>{date}</p>
+    <img src={image} alt="img" />
   </div>
 )
 
@@ -32,6 +34,7 @@ IndexPageTemplate.propTypes = {
   }).isRequired,
   backgroundColor: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 }
 
 const IndexPage = ({ data }) => {
@@ -40,6 +43,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
+        image={frontmatter.image}
         titleContainer={frontmatter.titleContainer}
         backgroundColor={frontmatter.backgroundColor}
         date={frontmatter.date}
@@ -69,6 +73,7 @@ export const pageQuery = graphql`
         }
         backgroundColor
         date
+        image
       }
     }
   }
