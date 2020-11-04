@@ -14,7 +14,12 @@ export const IndexPageTemplate = ({
       background: `${backgroundColor}`,
     }}
   >
-    <h1 hidden={!titleContainer.titleIsVisible}>{titleContainer.title}</h1>
+    <h1
+      style={{ textAlign: `${titleContainer.align}` }}
+      hidden={!titleContainer.titleIsVisible}
+    >
+      {titleContainer.title}
+    </h1>
     <p>{date}</p>
   </div>
 )
@@ -23,6 +28,7 @@ IndexPageTemplate.propTypes = {
   titleContainer: PropTypes.PropTypes.shape({
     title: PropTypes.string.isRequired,
     titleIsVisible: PropTypes.bool.isRequired,
+    align: PropTypes.string.isRequired,
   }).isRequired,
   backgroundColor: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -59,6 +65,7 @@ export const pageQuery = graphql`
         titleContainer {
           title
           titleIsVisible
+          align
         }
         backgroundColor
         date
