@@ -7,7 +7,7 @@ const PreviewCompatibleImage = ({ image, alt }) => {
     return <Img fluid={image.childImageSharp.fluid} alt={alt} />
   }
 
-  if (typeof image === 'string') return <img src={image} alt={alt} />
+  if (image.url) return <img src={image.url} alt={alt} />
 
   return null
 }
