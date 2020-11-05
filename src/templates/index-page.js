@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 import Layout from '../components/Layout'
 
@@ -24,7 +24,8 @@ export const IndexPageTemplate = ({
       {titleContainer.title}
     </h1>
     <p>{date}</p>
-    <Img fluid={image.childImageSharp.fluid} alt="img" />
+    <PreviewCompatibleImage image={image} alt="img" />
+    <PreviewCompatibleImage image="/img/2020-11-03_14-35.png" alt="img" />
     <p>{JSON.parse(location).coordinates[0]}</p>
     <p>{JSON.parse(location).coordinates[1]}</p>
   </div>

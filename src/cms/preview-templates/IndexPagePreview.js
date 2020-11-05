@@ -4,7 +4,6 @@ import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-
   if (data) {
     return (
       <IndexPageTemplate
@@ -12,6 +11,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         backgroundColor={data.backgroundColor}
         date={data.date}
         image={getAsset(data.image)}
+        location={data.location}
       />
     )
   }
