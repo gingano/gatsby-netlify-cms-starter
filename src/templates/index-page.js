@@ -25,8 +25,8 @@ export const IndexPageTemplate = ({
     </h1>
     <p>{date}</p>
     <Img fluid={image.childImageSharp.fluid} alt="img" />
-    <p>{location.geometry.coordinates[0]}</p>
-    <p>{location.geometry.coordinates[1]}</p>
+    <p>{JSON.parse(location).coordinates[0]}</p>
+    <p>{JSON.parse(location).coordinates[1]}</p>
   </div>
 )
 
@@ -39,7 +39,7 @@ IndexPageTemplate.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   image: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  location: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  location: PropTypes.string.isRequired,
 }
 
 const IndexPage = ({ data }) => {
@@ -86,11 +86,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        location {
-          geometry {
-            coordinates
-          }
-        }
+        location
       }
     }
   }
