@@ -47,7 +47,7 @@ const SlideControlHeader = styled.div`
 `
 
 const SlideControl = (props) => {
-  const MarkdownControl = CMS.getWidget('image').control
+  const MarkdownControl = CMS.getWidget('markdown').control
   return (
     <div>
       <SlideControlHeader>Slide</SlideControlHeader>
@@ -58,7 +58,7 @@ const SlideControl = (props) => {
 }
 
 const SlidePreview = (props) => {
-  const MarkdownPreview = CMS.getWidget('image').preview
+  const MarkdownPreview = CMS.getWidget('markdown').preview
   return (
     <div>
       <hr />
@@ -129,11 +129,9 @@ export class SlidesControl extends Component {
   }
 
   render() {
-    console.log(this.getValue())
     const slides = this.getValue().split(
       this.props.field.get('separator', defaultSeparator)
     )
-    console.log(slides)
     const slideControls = slides.map((slideContent, i) => (
       <SlideControl
         {...this.props}
