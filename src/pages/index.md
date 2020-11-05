@@ -11,10 +11,5 @@ location: '{"type":"Point","coordinates":[24.0255956,49.844406]}'
 gallery: |-
   ![](/img/2020-11-03_14-35.png)
   ![](/img/products-grid2.jpg)
-  2
-
-  1
-
-  1
   ![](/img/jumbotron.jpg)
 ---
