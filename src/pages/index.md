@@ -6,6 +6,6 @@ titleContainer:
   align: left
 backgroundColor: "#ff0000"
 date: 04 11 2020
-image: /img/2020-11-03_14-35.png
-location: '{"type":"Point","coordinates":[20.5664062,26.5885271]}'
+image: /img/products-grid2.jpg
+location: '{"type":"Point","coordinates":[24.0408325,49.8450676]}'
 ---
