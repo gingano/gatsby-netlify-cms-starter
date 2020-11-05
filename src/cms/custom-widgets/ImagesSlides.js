@@ -100,7 +100,7 @@ const getSlideActions = (onChange, slides, i) => {
   }
 }
 
-const defaultSeparator = '---'
+const defaultSeparator = '\n'
 
 export class SlidesControl extends Component {
   getValue() {
@@ -129,9 +129,11 @@ export class SlidesControl extends Component {
   }
 
   render() {
+    console.log(this.getValue())
     const slides = this.getValue().split(
       this.props.field.get('separator', defaultSeparator)
     )
+    console.log(slides)
     const slideControls = slides.map((slideContent, i) => (
       <SlideControl
         {...this.props}
