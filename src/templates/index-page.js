@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 
@@ -9,6 +10,7 @@ export const IndexPageTemplate = ({
   backgroundColor,
   date,
   image,
+  location,
 }) => (
   <div
     style={{
@@ -22,7 +24,9 @@ export const IndexPageTemplate = ({
       {titleContainer.title}
     </h1>
     <p>{date}</p>
-    <img src={image} alt="img" />
+    <Img fluid={image.childImageSharp.fluid} alt="img" />
+    <p>{location.geometry.coordinates[0]}</p>
+    <p>{location.geometry.coordinates[1]}</p>
   </div>
 )
 
@@ -34,7 +38,8 @@ IndexPageTemplate.propTypes = {
   }).isRequired,
   backgroundColor: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  location: PropTypes.oneOfType([PropTypes.object]).isRequired,
 }
 
 const IndexPage = ({ data }) => {
@@ -47,6 +52,7 @@ const IndexPage = ({ data }) => {
         titleContainer={frontmatter.titleContainer}
         backgroundColor={frontmatter.backgroundColor}
         date={frontmatter.date}
+        location={frontmatter.location}
       />
     </Layout>
   )
@@ -73,7 +79,18 @@ export const pageQuery = graphql`
         }
         backgroundColor
         date
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        location {
+          geometry {
+            coordinates
+          }
+        }
       }
     }
   }

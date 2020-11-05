@@ -24,3 +24,4 @@ collections:
           - {label: 'Background color', name: 'backgroundColor', widget: 'color', enableAlpha: true, allowInput: true}
           - {label: 'Date', name: 'date', widget: 'date', default: '', format: 'DD MM YYYY'}
           - {label: "Image", name: "image", widget: "image"}
+          - {label: "Location", name: "location", widget: "map" }
