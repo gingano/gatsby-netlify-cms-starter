@@ -1,7 +1,7 @@
 import CMS from 'netlify-cms-app'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
-import { SlidesControl, SlidesPreview } from './Slides'
+import { SlidesControl, SlidesPreview } from './custom-widgets/ImagesSlides'
 
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 

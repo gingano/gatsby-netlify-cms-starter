@@ -25,4 +25,4 @@ collections:
           - {label: 'Date', name: 'date', widget: 'date', default: '', format: 'DD MM YYYY'}
           - {label: "Image", name: "image", widget: "image"}
           - {label: "Location", name: "location", widget: "map" }
-          - {label: "Gallery", name: "gallery", widget: "slides", separator: "\n\n<!--s-->\n\n"}
+          - {label: "Gallery", name: "gallery", widget: "slides", separator: "\n\n<!--->\n\n"}

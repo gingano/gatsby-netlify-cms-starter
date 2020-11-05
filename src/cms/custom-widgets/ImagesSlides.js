@@ -47,7 +47,7 @@ const SlideControlHeader = styled.div`
 `
 
 const SlideControl = (props) => {
-  const MarkdownControl = CMS.getWidget('markdown').control
+  const MarkdownControl = CMS.getWidget('image').control
   return (
     <div>
       <SlideControlHeader>Slide</SlideControlHeader>
@@ -58,7 +58,7 @@ const SlideControl = (props) => {
 }
 
 const SlidePreview = (props) => {
-  const MarkdownPreview = CMS.getWidget('markdown').preview
+  const MarkdownPreview = CMS.getWidget('image').preview
   return (
     <div>
       <hr />
