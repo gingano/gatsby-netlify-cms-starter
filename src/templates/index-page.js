@@ -25,7 +25,6 @@ export const IndexPageTemplate = ({
     </h1>
     <p>{date}</p>
     <PreviewCompatibleImage image={image} alt="img" />
-    <PreviewCompatibleImage image="/img/2020-11-03_14-35.png" alt="img" />
     <p>{JSON.parse(location).coordinates[0]}</p>
     <p>{JSON.parse(location).coordinates[1]}</p>
   </div>
